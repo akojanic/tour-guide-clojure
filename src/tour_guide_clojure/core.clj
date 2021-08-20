@@ -1,7 +1,17 @@
 (ns tour-guide-clojure.core
-  (:gen-class))
+  (:use compojure.core)
+  (:require [compojure.handler :as handler]
+            [compojure.route :as route]
+            [ring.middleware.basic-authentication :refer :all]
+            [tour-guide-clojure.controller.controller :as controller]))
 
-(defn -main
-  "I don't do a whole lot ... yet."
-  [& args]
-  (println "Hello, World!"))
+(defroutes main-routes
+  (GET "/" [] (controller/index))
+  (route/resources "/"))
+
+(defroutes app-routes
+  main-routes
+  (route/not-found "Page Not Found! ERROR 404!"))
+
+(def -main
+  (handler/site app-routes))
