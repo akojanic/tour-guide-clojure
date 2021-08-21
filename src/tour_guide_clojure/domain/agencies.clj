@@ -1,4 +1,5 @@
 (ns tour-guide-clojure.domain.agencies
+  (:refer-clojure :exclude [update])
   (:require [clojure.java.jdbc :as jdbc]
             [clojure.java.jdbc.sql :as sql]))
 

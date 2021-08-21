@@ -12,7 +12,7 @@
     <link href="css/fontawesome-free-all.min.css" rel="stylesheet" type="text/css"/>
     <link href="css/style.css" rel="stylesheet"/>
     
-    <title>Tour Guide Clojure</title>
+    <title>Tour Guide Clojure - Agencies</title>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark probootstrap_navbar">
@@ -40,10 +40,53 @@
       </div>
     </nav>
 
-    <div class=" container d-flex justify-content-center align-items-center home-container">
-      <div class="home-container-content">
-        <h1>Agencies</h1>
-        <p>Every traveler is unique, and your vacation should be as well.</p>
+    <div class="container d-flex justify-content-center align-items-center table-wrapper">
+      <div class="table-container">
+        <div class="mb-3 d-flex justify-content-between align-items-center">
+          <h2 class="pt-3 pb-2">Agencies</h2>
+          <a type="button" href="/agencies/create" class="btn btn-success">
+            Create
+            <i class="fas fa-file-alt"></i>
+          </a>
+      </div>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Address</th>
+            <th scope="col">Email</th>
+            <th scope="col">Phone Number</th>
+            <th class="icon-btn" scope="col">Update</th>
+            <th class="icon-btn" scope="col">Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#agencies}}
+          <tr>
+            <td>{{agencyid}}</td>
+            <td>{{name}}</td>
+            <td>{{address}}</td>
+            <td>{{email}}</td>
+            <td>{{phonenumber}}</td>
+            <td class="icon-btn">
+              <a
+                href="/agencies/{{agencyid}}/update"
+                class="text-success">
+                <i class="fas fa-edit"></i>
+              </a>
+            </td>
+            <td class="icon-btn">
+              <a
+                href="/agencies/{{agencyid}}/delete"
+                class="text-danger">
+                <i class="fas fa-trash-alt"></i>
+              </a>
+            </td>
+          </tr>
+          {{/agencies}}
+        </tbody>
+      </table>
       </div>
     </div>
     

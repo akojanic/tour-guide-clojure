@@ -49,6 +49,22 @@ body {
     text-align: center;
 }
 
+.table-wrapper {
+    height: 95vh;
+}
+
+.table-wrapper .table-container {
+    height: 100%;
+    max-height: 500px;
+    width: 100%;
+    background-color: white;
+    padding: 15px;
+}
+
+.icon-btn {
+    text-align: center;
+}
+
 footer {
     position: absolute;
     bottom: 0;
