@@ -1,4 +1,4 @@
-(ns tour-guide-clojure.domain.guide
+(ns tour-guide-clojure.domain.guides
   (:require [clojure.java.jdbc :as jdbc]
             [clojure.java.jdbc.sql :as sql]))
 

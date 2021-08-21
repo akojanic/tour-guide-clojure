@@ -1,7 +1,10 @@
 (ns tour-guide-clojure.controller.controller
   (:require
    [clostache.parser :as clostache]
-   [clojure.java.io :as io]))
+   [clojure.java.io :as io]
+   [tour-guide-clojure.domain.agencies :as agencies-domain]
+   [tour-guide-clojure.domain.guides :as guides-domain]
+   [tour-guide-clojure.domain.tours :as tours-domain]))
 
 (defn read-page [page-name]
   (slurp (io/resource
@@ -12,3 +15,12 @@
 
 (defn index []
   (render-page "index" {}))
+
+(defn agencies []
+  (render-page "agencies" {:agencies (agencies-domain/getAll)}))
+
+(defn guides []
+  (render-page "guides" {:guides (guides-domain/getAll)}))
+
+(defn tours []
+  (render-page "tours" {:tours (tours-domain/getAllTours)}))
