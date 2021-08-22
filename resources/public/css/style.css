@@ -14,14 +14,6 @@ body {
     background-position: center;
 }
 
-.probootstrap_navbar {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    width: 100%;
-}
-
 .probootstrap_navbar .nav-item.nav-link {
     padding: 1.6em 1em;
     font-size: 14px;
@@ -31,12 +23,12 @@ body {
 }
 
 .home-container {
-    height: 100vh;
+    height: 80vh;
 }
 
 .home-container > .home-container-content h1 {
     font-size: 64px;
-}
+}   
 
 .home-container > .home-container-content a.btn {
     padding: 10px 50px;
@@ -49,16 +41,20 @@ body {
     text-align: center;
 }
 
-.table-wrapper {
-    height: 95vh;
-}
 
-.table-wrapper .table-container {
+.table-container,
+.form-container {
     height: 100%;
-    max-height: 500px;
     width: 100%;
     background-color: white;
     padding: 15px;
+}
+
+.form-container {
+    padding: 15px 30px !important;
+    margin-top: 30px;
+    width: 600px;
+    margin-bottom: 100px;
 }
 
 .icon-btn {

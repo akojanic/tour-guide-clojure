@@ -24,3 +24,13 @@
 
 (defn tours []
   (render-page "tours" {:tours (tours-domain/getAllTours)}))
+
+(defn create-guide []
+  (render-page "create-guide" {:agencies (agencies-domain/getAll)}))
+
+(defn create-agency []
+  (render-page "create-agency" {}))
+
+(defn create-tour []
+  (render-page "create-tour" {:cities (tours-domain/getAllCities)
+                              :guides (guides-domain/getAll)}))

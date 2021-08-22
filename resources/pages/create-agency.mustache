@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link href="../css/fontawesome-free-all.min.css" rel="stylesheet" type="text/css" />
+    <link href="../css/style.css" rel="stylesheet" />
+
+    <title>Tour Guide Clojure - Create Agency</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark probootstrap_navbar">
+      <div class="container">
+        <a class="navbar-brand" href="/"><strong>TourGuide</strong></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav ml-auto">
+            <a class="nav-item nav-link" href="/">Home</a>
+            <a class="nav-item nav-link" href="/guides">Guides</a>
+            <a class="nav-item nav-link active" href="/agencies">Agencies</a>
+            <a class="nav-item nav-link" href="/tours">Tours</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container d-flex justify-content-center align-items-center">
+      <div class="form-container mb-50">
+        <div class="d-flex justify-content-between align-items-center">
+          <h2 class="mb-3">Create Agency</h2>
+        </div>
+        <form name="guideForm" action="/agencies/create" method="post">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input name="name" type="text" class="form-control" id="name" placeholder="Enter name" required />
+          </div>
+          <div class="form-group">
+            <label for="address">Address</label>
+            <input name="address" type="text" class="form-control" id="address" placeholder="Enter address" required/>
+          </div>
+          <div class="form-group">
+            <label for="email">Email address</label>
+            <input name="email" type="email" class="form-control" id="email" placeholder="Enter email" required/>
+          </div>
+          <div class="form-group">
+            <label for="taxId">Tax ID</label>
+            <input name="taxId" type="text" class="form-control" id="taxId" placeholder="Enter Tax ID" required/>
+          </div>
+          <div class="form-group">
+            <label for="phoneNumber">Phone number</label>
+            <input name="phoneNumber" type="text" class="form-control" id="phoneNumber" placeholder="Enter phone" required/>
+          </div>
+          <button style="float: right" type="submit" class="btn btn-success">Submit</button>
+        </form>
+      </div>
+    </div>
+
+    <footer>
+      <p>“Take only memories, leave only footprints” ~ Chief Seattle</p>
+    </footer>
+
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
