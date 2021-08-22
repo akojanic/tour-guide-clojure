@@ -14,10 +14,10 @@
       integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
       crossorigin="anonymous"
     />
-    <link href="../css/fontawesome-free-all.min.css" rel="stylesheet" type="text/css" />
-    <link href="../css/style.css" rel="stylesheet" />
+    <link href="../../../css/fontawesome-free-all.min.css" rel="stylesheet" type="text/css" />
+    <link href="../../../css/style.css" rel="stylesheet" />
 
-    <title>Tour Guide Clojure - Create Agency</title>
+    <title>Tour Guide Clojure - Update Agency</title>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark probootstrap_navbar">
@@ -48,30 +48,30 @@
     <div class="container d-flex justify-content-center align-items-center">
       <div class="form-container mb-50">
         <div class="d-flex justify-content-between align-items-center">
-          <h2 class="mb-3">Create Agency</h2>
+          <h2 class="mb-3">Update Agency</h2>
         </div>
-        <form name="guideForm" action="/agencies/create" method="post">
+        <form name="guideForm" action="/agencies/{{agency.agencyid}}/update" method="post">
           <div class="form-group">
             <label for="name">Name</label>
-            <input name="name" type="text" class="form-control" id="name" placeholder="Enter name" required />
+            <input name="name" type="text" class="form-control" id="name" placeholder="Enter name" value="{{agency.name}}" required />
           </div>
           <div class="form-group">
             <label for="address">Address</label>
-            <input name="address" type="text" class="form-control" id="address" placeholder="Enter address" required/>
+            <input name="address" type="text" class="form-control" id="address" placeholder="Enter address" value="{{agency.address}}" required/>
           </div>
           <div class="form-group">
             <label for="email">Email address</label>
-            <input name="email" type="email" class="form-control" id="email" placeholder="Enter email" required/>
+            <input name="email" type="email" class="form-control" id="email" placeholder="Enter email" value="{{agency.email}}" required/>
           </div>
           <div class="form-group">
             <label for="taxId">Tax ID</label>
-            <input name="taxId" min="0" type="number" class="form-control" id="taxId" placeholder="Enter Tax ID" required/>
+            <input name="taxId" type="number" min="0" class="form-control" id="taxId" placeholder="Enter Tax ID" value="{{agency.taxid}}" required/>
           </div>
           <div class="form-group">
             <label for="phoneNumber">Phone number</label>
-            <input name="phoneNumber" type="text" class="form-control" id="phoneNumber" placeholder="Enter phone" required/>
+            <input name="phoneNumber" type="text" class="form-control" id="phoneNumber" placeholder="Enter phone" value="{{agency.phonenumber}}" required/>
           </div>
-          <button style="float: right" type="submit" class="btn btn-success">Submit</button>
+          <button style="float: right" type="submit" class="btn btn-success">Update</button>
         </form>
       </div>
     </div>

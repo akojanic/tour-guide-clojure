@@ -14,10 +14,10 @@
       integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
       crossorigin="anonymous"
     />
-    <link href="../css/fontawesome-free-all.min.css" rel="stylesheet" type="text/css" />
-    <link href="../css/style.css" rel="stylesheet" />
+    <link href="../../../css/fontawesome-free-all.min.css" rel="stylesheet" type="text/css" />
+    <link href="../../../css/style.css" rel="stylesheet" />
 
-    <title>Tour Guide Clojure - Create Agency</title>
+    <title>Tour Guide Clojure - Update Tour</title>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark probootstrap_navbar">
@@ -38,8 +38,8 @@
           <div class="navbar-nav ml-auto">
             <a class="nav-item nav-link" href="/">Home</a>
             <a class="nav-item nav-link" href="/guides">Guides</a>
-            <a class="nav-item nav-link active" href="/agencies">Agencies</a>
-            <a class="nav-item nav-link" href="/tours">Tours</a>
+            <a class="nav-item nav-link" href="/agencies">Agencies</a>
+            <a class="nav-item nav-link active" href="/tours">Tours</a>
           </div>
         </div>
       </div>
@@ -48,30 +48,42 @@
     <div class="container d-flex justify-content-center align-items-center">
       <div class="form-container mb-50">
         <div class="d-flex justify-content-between align-items-center">
-          <h2 class="mb-3">Create Agency</h2>
+          <h2 class="mb-3">Update Tour</h2>
         </div>
-        <form name="guideForm" action="/agencies/create" method="post">
+        <form name="guideForm" action="/tours/{{tour.tourid}}/update" method="post">
           <div class="form-group">
             <label for="name">Name</label>
-            <input name="name" type="text" class="form-control" id="name" placeholder="Enter name" required />
+            <input name="name" type="text" class="form-control" id="name" placeholder="Enter name" value="{{tour.name}}" required />
           </div>
           <div class="form-group">
-            <label for="address">Address</label>
-            <input name="address" type="text" class="form-control" id="address" placeholder="Enter address" required/>
+            <label for="date">Date</label>
+            <input type="date" class="form-control" name="date" id="date" placeholder="Enter date" value={{tour.date}} required>
           </div>
           <div class="form-group">
-            <label for="email">Email address</label>
-            <input name="email" type="email" class="form-control" id="email" placeholder="Enter email" required/>
+            <label for="length">Length of the Tour</label>
+            <input name="length" type="text" class="form-control" id="length" placeholder="Enter length" value="{{tour.length}}" required />
           </div>
           <div class="form-group">
-            <label for="taxId">Tax ID</label>
-            <input name="taxId" min="0" type="number" class="form-control" id="taxId" placeholder="Enter Tax ID" required/>
+            <label for="city">City</label>
+            <select name="city" class="form-control" id="city" value="{{tour.city}}">
+              {{#cities}}
+              <option value="{{ cityid }}">{{ name }}</option>
+              {{/cities}}
+            </select>
           </div>
           <div class="form-group">
-            <label for="phoneNumber">Phone number</label>
-            <input name="phoneNumber" type="text" class="form-control" id="phoneNumber" placeholder="Enter phone" required/>
+            <label for="guide">Guide</label>
+            <select name="guide" class="form-control" id="guide" value="{{tour.guide}}">
+              {{#guides}}
+              <option value="{{ guideid }}">{{ firstname }} {{ lastname }}</option>
+              {{/guides}}
+            </select>
           </div>
-          <button style="float: right" type="submit" class="btn btn-success">Submit</button>
+          <div class="form-group">
+            <label for="description">Description of the Tour</label>
+            <textarea name="description" type="textarea" class="form-control" id="description" placeholder="Enter description" rows="3">{{tour.description}}</textarea>
+          </div>
+          <button style="float: right" type="submit" class="btn btn-success">Update</button>
         </form>
       </div>
     </div>

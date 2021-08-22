@@ -31,6 +31,15 @@
   (GET "/tours/create" [] (controller/create-tour))
   (route/resources "/")
 
+  ;; UPDATE GUIDE PAGE 
+  (GET "/guides/:id/update" [id] (controller/update-guide id))
+
+  ;; UPDATE AGENCY PAGE 
+  (GET "/agencies/:id/update" [id] (controller/update-agency id))
+
+  ;; UPDATE TOUR PAGE 
+  (GET "/tours/:id/update" [id] (controller/update-tour id))
+
   ;; CREATE GUIDE
   (POST "/guides/create" [& params]
     (do (guides-domain/createGuide params)
@@ -44,6 +53,36 @@
   ;; CREATE GUIDE
   (POST "/tours/create" [& params]
     (do (tours-domain/createTour params)
+        (resp/redirect "/tours")))
+
+  ;; DELETE GUIDE
+  (GET "/guides/:id/delete" [id]
+    (do (guides-domain/deleteGuide id)
+        (resp/redirect "/guides")))
+
+  ;; DELETE AGENCY
+  (GET "/agencies/:id/delete" [id]
+    (do (agencies-domain/deleteAgency id)
+        (resp/redirect "/agencies")))
+
+  ;; DELETE TOUR
+  (GET "/tours/:id/delete" [id]
+    (do (tours-domain/deleteTour id)
+        (resp/redirect "/tours")))
+
+  ;; UPDATE GUIDE
+  (POST "/guides/:guideId/update" [& params]
+    (do (guides-domain/updateGuide (:guideId params) params)
+        (resp/redirect "/guides")))
+
+  ;; UPDATE AGENCY
+  (POST "/agencies/:agencyId/update" [& params]
+    (do (agencies-domain/updateAgency (:agencyId params) params)
+        (resp/redirect "/agencies")))
+
+  ;; UPDATE TOUR
+  (POST "/tours/:tourId/update" [& params]
+    (do (tours-domain/updateTour (:tourId params) params)
         (resp/redirect "/tours"))))
 
 (defroutes app-routes

@@ -34,3 +34,15 @@
 (defn create-tour []
   (render-page "create-tour" {:cities (tours-domain/getAllCities)
                               :guides (guides-domain/getAll)}))
+
+(defn update-guide [id]
+  (render-page "update-guide" {:guide (guides-domain/getOne id)
+                               :agencies (agencies-domain/getAll)}))
+
+(defn update-agency [id]
+  (render-page "update-agency" {:agency (agencies-domain/getOne id)}))
+
+(defn update-tour [id]
+  (render-page "update-tour" {:tour (tours-domain/getOne id)
+                              :cities (tours-domain/getAllCities)
+                              :guides (guides-domain/getAll)}))
