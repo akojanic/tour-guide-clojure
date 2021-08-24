@@ -4,12 +4,9 @@ CRUD Clojure Tour Guide Web app.
 
 ## Running the app
 
-To start up the application first create a mysql database and run *clojure-tour-guide.sql* script to create all the tables and insert data. 
+To start up the application first create a mysql database (name it *clojure-tour-guide*) and run *clojure-tour-guide.sql* script to create all the tables and insert data. 
 
-Make sure to add database credentials by replacing **\<your-username>** and **\<your-password>** to the following files :
-* /src/tour_guide_clojure/domain/agencies.clj
-* /src/tour_guide_clojure/domain/guides.clj
-* /src/tour_guide_clojure/domain/tours.clj
+Make sure to add database credentials by replacing **\<your-username>** and **\<your-password>** in the file ```tour_guide_clojure/database.clj``` .
 
 	
 Then start the app in terminal using the command:
